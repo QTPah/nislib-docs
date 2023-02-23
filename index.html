@@ -30,7 +30,7 @@
         <p>
             This is what a small network could look like:<br>
             <img class="graph" alt="nislib" src="./images/network1.png"><br>
-            The regular arrows represent the <b>familial connections</b>. They go from the <b>Child node</b><img class="inline text" alt="nislib" src="./Images/arrow.png"><b>Parent node</b>.<br>
+            The regular arrows represent the <b>familial connections</b>. They go from the <b>Child node</b><img class="inline text" alt="nislib" src="./images/arrow.png"><b>Parent node</b>.<br>
             The double headed arrows (<img class="inline text" alt="nislib" src="./images/doubleheaded_arrow.png">) represent the <b>direct connections</b> which connect two nodes directly to each other. But we'll get into that later.<br><br>
             The familial connections form a tree structure making a rather simple, efficient but unstable network. In case of a node going offline, it's children will be disconnected from the network. The children will rely a <b>fallback node list</b> which they automatically create and update while being connected.<br><br>
             Additionally, they might be <b>connected directly</b> to other nodes which can be used as a fallback parent nodes.
