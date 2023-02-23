@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+
+    <title>nislib</title>
+
+    <link rel="stylesheet" href="./nislib.css">
+</head>
+<body>
+    <img id="logo" alt="nislib" src="./images/nislib-logo.png">
+    <h1>Welcome to nislib, the new infrastructure library!</h1>
+    <p>
+        nislib is a C# library that makes it easy to create decentralized peer-to-peer networks. With nislib, you can manage all connectivity and communication on a low level, and all nodes in a network are equal.
+        <br><br>
+        Using nislib, you can easily add new features to your nodes using modules. Modules are like libraries that you can code and install to extend your nodes' functionality. For example, you could use a module to enable transactions between nodes. To code a module yourself, you're provided with events on a lower level, as well as the node object itself.
+        <br><br>
+        We believe that nislib is a powerful tool for anyone looking to create decentralized networks. Whether you're building a new application, or adding decentralized functionality to an existing one, nislib can help you get there faster.
+        <br><br>
+        Thank you for considering nislib for your project. We can't wait to see what you create with it!
+    </p>
+    <br>
+    <h1>But what's under the hood?</h1>
+
+    <section id="network-structure">
+        <h2>Network Structure</h2>
+        <p>
+            This is what a small network could look like:<br>
+            <img class="graph" alt="nislib" src="./images/network1.png"><br>
+            The regular arrows represent the <b>familial connections</b>. They go from the <b>Child node</b><img class="inline text" alt="nislib" src="./Images/arrow.png"><b>Parent node</b>.<br>
+            The double headed arrows (<img class="inline text" alt="nislib" src="./images/doubleheaded_arrow.png">) represent the <b>direct connections</b> which connect two nodes directly to each other. But we'll get into that later.<br><br>
+            The familial connections form a tree structure making a rather simple, efficient but unstable network. In case of a node going offline, it's children will be disconnected from the network. The children will rely a <b>fallback node list</b> which they automatically create and update while being connected.<br><br>
+            Additionally, they might be <b>connected directly</b> to other nodes which can be used as a fallback parent nodes.
+            <img class="graph" alt="nislib" src="./images/disconnect_anim.gif"><br>
+        </p>
+    </section><br>
+    <section id="communication">
+        <h2>Communication</h2>
+        <p>
+            Probably the most important type of communication is the <b>broadcast</b> allowing to initiate all other types of communication.<br>
+            The broadcast is a message that is sent to all nodes in the network. It utilizes the <b>familial connections</b> to reach all nodes efficiently.<br>
+            In order to broadcast a message, the original sender will send it to all of it's children and parent. Nodes receiving the broadcast will then send it to all of their children and parent except the node they recieved the broadcast from, and so on.<br>
+            <img class="graph" alt="nislib" src="./images/broadcast_anim.gif"><br>
+            Broadcasts are used to send messages to all nodes in the network, but they can also be used to send messages to a specific node.
+            
+        </p>
+    </section>
+</body>
+</html>
